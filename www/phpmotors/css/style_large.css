@@ -1,0 +1,51 @@
+@media only screen and (min-width: 541px) {
+  #navigation li {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #navigation ul {
+    flex-direction: row;
+  }
+
+  body {
+    max-width: 80%;
+    margin: auto;
+    border: solid 4px #4c96d7;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+  }
+
+  #page-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+  }
+
+  #page-landing {
+    justify-content: start;
+    width: 100%;
+  }
+
+  #features {
+    order: 1;
+  }
+
+  #landing-btn {
+    order: 2;
+    margin: 0;
+  }
+
+  #landing-img {
+    order: 3;
+  }
+
+  #reviews {
+    width: 50%;
+  }
+
+  #upgrades {
+    width: 50%;
+  }
+}
