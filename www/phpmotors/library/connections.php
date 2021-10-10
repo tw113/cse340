@@ -2,7 +2,7 @@
 
 function phpmotorsConnect(){
   $server = 'mysql';
-  $dbname= 'phpmotor';
+  $dbname= 'phpmotors';
   $username = 'iClient';
   $password = 'CLIENT_PASS'; 
   $dsn = "mysql:host=$server;dbname=$dbname";
@@ -11,12 +11,10 @@ function phpmotorsConnect(){
   // Create the actual connection object and assign it to a variable
   try {
    $link = new PDO($dsn, $username, $password, $options);
-   echo 'Connection succesful!';
+   //echo 'Connection succesful!';
    return $link;
   } catch(PDOException $e) {
    header('Location: /phpmotors/view/500.php');
    exit;
   }
  }
-
- phpmotorsConnect();

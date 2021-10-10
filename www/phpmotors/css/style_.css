@@ -137,3 +137,28 @@ body {
   border-top: #3a3a3a solid 4px;
   padding: 20px;
 }
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type=text] {
+  width: 33%;
+  min-width: 200px;
+  max-width: 400px;
+  margin: 10px;
+  padding: 20px;
+}
+
+input[type=submit] {
+  min-width: 100px;
+  margin: 10px;
+  padding: 20px;
+}
+
+span {
+  color: #4c96d7;
+}
