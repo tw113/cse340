@@ -27,7 +27,7 @@
     <input type="submit" value="Submit">
   </form>
   <div id="sign-up-button">
-    <h4>Already have an account? <a href="/phpmotors/index.php?action=login"><span>Login</span></a></h4>
+    <h4>Already have an account? <a href="/phpmotors/accounts/index.php?action=login"><span>Login</span></a></h4>
   </div>
   <footer id="footer">
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>

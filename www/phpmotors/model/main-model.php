@@ -1,6 +1,7 @@
 <?php
 
-function getClassifications(){
+function getClassifications()
+{
  // Create a connection object from the phpmotors connection function
  $db = phpmotorsConnect(); 
  // The SQL statement to be used with the database 
@@ -17,4 +18,24 @@ function getClassifications(){
  // The next line sends the array of data back to where the function 
  // was called (this should be the controller) 
  return $classifications;
+}
+
+function buildNavBar()
+{
+  global $navList;
+
+  $classifications = getClassifications();
+
+  // var_dump($classifications);
+  //   exit;
+
+  // Build a navigation bar using the $classifications array
+  $navList = '<ul>';
+  $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
+
+  foreach ($classifications as $classification) {
+    $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
+  }
+
+  $navList .= '</ul>';
 }
