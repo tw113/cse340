@@ -19,13 +19,18 @@
     <?php echo $navList; ?>
   </nav>
   <h1>Login</h1>
+  <?php
+    if (isset($message)) {
+    echo $message;
+    }
+  ?>
   <form name="login-form" action="/main-model.php">
     <input name="clientEmail" id="clientEmail" type="text" placeholder="Email*" required>
     <input name="clientPassword" id="clientLPassword" type="text" placeholder="Password*" required>
     <input type="submit" value="Login">
   </form>
   <div id="sign-up-button">
-    <h4>No account? <a href="/phpmotors/accounts/index.php?action=register"><span>Sign-up</span></a></h4>
+    <h4>No account? <a href="/phpmotors/accounts/index.php?action=registration"><span>Sign-up</span></a></h4>
   </div>
   <footer id="footer">
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
