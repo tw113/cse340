@@ -27,13 +27,15 @@ h4 {
   text-align: center;
 }
 
-p.error {
+p {
   text-align: center;
+}
+
+p.error {
   color: red;
 }
 
 p.success {
-  text-align: center;
   color: green;
 }
 
@@ -171,23 +173,7 @@ select option {
   padding: 20px;
 }
 
-input[type=text] {
-  width: 33%;
-  min-width: 200px;
-  max-width: 400px;
-  margin: 10px;
-  padding: 20px;
-}
-
-input[type=file] {
-  width: 33%;
-  min-width: 200px;
-  max-width: 400px;
-  margin: 10px;
-  padding: 20px;
-}
-
-input[type=number] {
+input {
   width: 33%;
   min-width: 200px;
   max-width: 400px;
@@ -218,4 +204,9 @@ input[type=submit] {
 
 span {
   color: #4c96d7;
+}
+
+span.password {
+  width: 300px;
+  font-size: small;
 }

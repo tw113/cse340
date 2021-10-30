@@ -24,10 +24,12 @@
     echo $message;
     }
   ?>
-  <form name="login-form" action="/main-model.php">
-    <input name="clientEmail" id="clientEmail" type="text" placeholder="Email*" required>
-    <input name="clientPassword" id="clientLPassword" type="text" placeholder="Password*" required>
+  <form name="login-form">
+    <input name="clientEmail" id="clientEmail" type="email" placeholder="Email*" <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
+    <input name="clientPassword" id="clientLPassword" type="password" placeholder="Password*" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+    <span class="password">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
     <input type="submit" value="Login">
+    <input type="hidden" name="action" value="Login">
   </form>
   <div id="sign-up-button">
     <h4>No account? <a href="/phpmotors/accounts/index.php?action=registration"><span>Sign-up</span></a></h4>
