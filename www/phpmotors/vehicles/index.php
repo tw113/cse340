@@ -1,5 +1,8 @@
 <?php
 
+// Create or access a Session
+session_start();
+
 require_once '../library/connections.php';
 require_once '../model/main-model.php';
 require_once '../model/vehicles-model.php';

@@ -1,3 +1,9 @@
+<?php
+  // Check if user is logged in. If not, send to home
+  if(!$_SESSION['loggedin']) {
+    header('Location: /phpmotors/index.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,21 +24,20 @@
   <nav id="navigation">
     <?php echo $navList; ?>
   </nav>
-  <h1>Login</h1>
-  <?php
-    if (isset($_SESSION['message'])) {
-      echo $_SESSION['message'];
-    }
-  ?>
-  <form name="login-form" method="post" action="/phpmotors/accounts/">
-    <input name="clientEmail" id="clientEmail" type="email" placeholder="Email*" <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
-    <input name="clientPassword" id="clientPassword" type="password" placeholder="Password*" required>
-    <span class="password">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
-    <input type="submit" value="Login">
-    <input type="hidden" name="action" value="Login">
-  </form>
-  <div id="sign-up-button">
-    <h4>No account? <a href="/phpmotors/accounts/index.php?action=registration"><span>Sign-up</span></a></h4>
+  <h1><?php echo $_SESSION['clientData']['clientFirstname'] . " " . $_SESSION['clientData']['clientLastname'] ?></h1>
+  <div class="flex-container">
+    <h2>You are logged in.</h2>
+    <ul>
+      <li><?php echo "First Name: " .  $_SESSION['clientData']['clientFirstname'] ?></li>
+      <li><?php echo "Last Name: " .  $_SESSION['clientData']['clientLastname'] ?></li>
+      <li><?php echo "Email: " .  $_SESSION['clientData']['clientEmail'] ?></li>
+    </ul>
+    <?php
+      $clientLevel = (int)$_SESSION['clientData']['clientLevel'];
+      if($clientLevel > 1) {
+        echo "<a class='button' href='/phpmotors/vehicles/index.php'>Vehicle Management</a>";
+      }
+    ?>
   </div>
   <footer id="footer">
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>

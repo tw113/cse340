@@ -210,3 +210,18 @@ span.password {
   width: 300px;
   font-size: small;
 }
+
+a.button {
+  width: 200px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.flex-container {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
