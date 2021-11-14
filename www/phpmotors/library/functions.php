@@ -30,3 +30,15 @@ function buildNavBar()
 
   $navList .= '</ul>';
 }
+
+// Build the classifications select list 
+function buildClassificationList($classifications) { 
+  global $classificationsList;
+  $classificationList = '<select name="classificationId" id="classificationList">'; 
+  $classificationList .= "<option>Choose a Classification</option>"; 
+  foreach ($classifications as $class => $id) { 
+   $classificationList .= "<option value='$id'>$class</option>"; 
+  } 
+  $classificationList .= '</select>'; 
+  return $classificationList; 
+ }

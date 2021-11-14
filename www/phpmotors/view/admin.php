@@ -3,6 +3,9 @@
   if(!$_SESSION['loggedin']) {
     header('Location: /phpmotors/index.php');
   }
+  if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +27,22 @@
   <nav id="navigation">
     <?php echo $navList; ?>
   </nav>
+  <?php
+    if (isset($message)) {
+    echo $message;
+    }
+  ?>
   <h1><?php echo $_SESSION['clientData']['clientFirstname'] . " " . $_SESSION['clientData']['clientLastname'] ?></h1>
   <div class="flex-container">
     <h2>You are logged in.</h2>
-    <ul>
+    <!-- <ul>
       <li><?php echo "First Name: " .  $_SESSION['clientData']['clientFirstname'] ?></li>
       <li><?php echo "Last Name: " .  $_SESSION['clientData']['clientLastname'] ?></li>
       <li><?php echo "Email: " .  $_SESSION['clientData']['clientEmail'] ?></li>
-    </ul>
+    </ul> -->
     <?php
+      echo "<a class='button' href='/phpmotors/accounts?action=client&clientId=" . $_SESSION['clientData']['clientId'] . "'>Update Account Info</a>";
+      echo "<a class='button' href='/phpmotors/accounts?action=password&clientId=" . $_SESSION['clientData']['clientId'] . "'>Change Password</a>";
       $clientLevel = (int)$_SESSION['clientData']['clientLevel'];
       if($clientLevel > 1) {
         echo "<a class='button' href='/phpmotors/vehicles/index.php'>Vehicle Management</a>";
@@ -44,3 +54,4 @@
   </footer>
 </body>
 </html>
+<?php unset($_SESSION['message']); ?>
