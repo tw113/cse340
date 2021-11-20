@@ -28,7 +28,7 @@
         <h3>Fuzzy Dice!</h3>
       </div>
       <div id="landing-img">
-        <img src="/phpmotors/images/delorean.jpg" alt="DMC Delorean Illustration"/>
+        <img src="/phpmotors/images/vehicles/delorean.jpg" alt="DMC Delorean Illustration"/>
       </div>
       <div id="landing-btn">
         <button><strong>Own Today</strong></button>

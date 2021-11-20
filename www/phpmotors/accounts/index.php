@@ -145,7 +145,7 @@ $action = filter_input(INPUT_POST, 'action');
     }
     
     // Check for missing data
-    if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)){
+    if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
       include '../view/update-client.php';
       exit; 

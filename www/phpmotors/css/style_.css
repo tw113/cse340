@@ -27,6 +27,17 @@ h4 {
   text-align: center;
 }
 
+h5 {
+  text-align: center;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 3px;
+  font-size: smaller;
+}
+
 p {
   text-align: center;
 }
@@ -224,4 +235,41 @@ a.button {
   margin: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.details-container {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#inv-display {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+#inv-display li {
+  margin: auto;
+  list-style-type: none;
+  max-width: 200px;
+}
+ 
+#inv-display li img {
+  max-width: 100%;
+}
+
+#vehicle-imgs img {
+  width: 90%;
+}
+
+#vehicle-details {
+  width: 90%;
+}
+
+.justify-left {
+  text-align: left;
 }

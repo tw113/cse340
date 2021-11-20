@@ -4,6 +4,20 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  #inv-display {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .details-container {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   #navigation ul {
     flex-direction: row;
