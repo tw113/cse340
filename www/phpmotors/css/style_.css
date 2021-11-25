@@ -273,3 +273,14 @@ a.button {
 .justify-left {
   text-align: left;
 }
+
+#inv-img-display {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#inv-img-display img {
+  max-width: 100px;
+}

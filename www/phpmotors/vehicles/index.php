@@ -9,6 +9,7 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 require_once '../model/vehicles-model.php';
 require_once '../library/functions.php';
+require_once '../model/uploads-model.php';
 
 buildNavBar();
 
@@ -188,7 +189,9 @@ switch ($action){
     // Get the vehicle ID 
     $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT); 
     // Fetch the vehicle by invId from the DB 
-    $vehicle = getInvItemInfo($invId); 
+    $vehicle = getInvItemInfoAndImages($invId);
+    $images = getImagesByInvId($invId);
+    $vehicleImageDisplay = buildVehicleImageDisplay($images, $vehicle);
     
     include '../view/vehicle-detail.php';
 

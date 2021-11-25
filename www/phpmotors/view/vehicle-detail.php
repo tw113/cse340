@@ -24,7 +24,10 @@
   ?>
   <div class="details-container">
     <div id="vehicle-imgs">
-      <img <?php echo "src='$vehicle[invImage]' alt='$vehicle[invMake] $vehicle[invModel]'" ?>>
+      <img <?php echo "src='$vehicle[imgPath]' alt='$vehicle[invMake] $vehicle[invModel]'" ?>>
+      <div id="thumbnails">
+        <?php echo $vehicleImageDisplay ?>
+      </div>
     </div>
     <div id="vehicle-details">
       <h2 style="color: black"><?php echo $vehicle['invMake'] . " " . $vehicle['invModel'] ?></h2>
