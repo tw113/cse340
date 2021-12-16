@@ -15,6 +15,7 @@ h1 {
 h2 {
   color: #4c96d7;
   margin: 0;
+  margin: 10px;
 }
 
 h3 {
@@ -283,4 +284,79 @@ a.button {
 
 #inv-img-display img {
   max-width: 100px;
+}
+
+#write-review {
+  margin: 20px;
+  background-color: rgb(233, 233, 233);
+}
+
+textarea {
+  width: 90%;
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+}
+
+label {
+  margin: 10px;
+}
+
+#reviews-display {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+ 
+#reviews-display li {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  list-style-type: none;
+  width: 90%;
+  background-color: lightgrey;
+}
+
+#reviews-display h5 {
+  text-align: unset;
+  margin: 10px;
+}
+
+#reviews-display p {
+  text-align: unset;
+  margin: 10px;
+}
+
+#admin-reviews-display {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#admin-reviews-display li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  list-style-type: none;
+  width: 90%;
+  background-color: lightgrey;
+}
+
+#admin-reviews-display h5 {
+  text-align: unset;
+  margin: 10px;
+}
+
+#admin-reviews-display a {
+  text-decoration: underline;
+  margin: 10px;
+}
+
+.flex-container textarea {
+  width: 33%;
 }

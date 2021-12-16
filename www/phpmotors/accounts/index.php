@@ -7,6 +7,7 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 require_once '../model/accounts-model.php';
 require_once '../library/functions.php';
+require_once '../model/reviews-model.php';
 
 buildNavBar();
 
@@ -104,6 +105,13 @@ $action = filter_input(INPUT_POST, 'action');
     exit;
 
   case 'admin':
+    $clientFirstname = $_SESSION["clientData"]["clientFirstname"];
+    $clientLastname = $_SESSION["clientData"]["clientLastname"];
+
+    $adminReviews = getReviewsByClientId($_SESSION['clientData']['clientId']);
+
+    $reviewsDisplay = buildAdminReviews($adminReviews, $clientFirstname, $clientLastname);
+
     include '../view/admin.php';
     break;
 

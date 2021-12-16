@@ -10,6 +10,7 @@ require_once '../model/main-model.php';
 require_once '../model/vehicles-model.php';
 require_once '../library/functions.php';
 require_once '../model/uploads-model.php';
+require_once '../model/reviews-model.php';
 
 buildNavBar();
 
@@ -192,6 +193,22 @@ switch ($action){
     $vehicle = getInvItemInfoAndImages($invId);
     $images = getImagesByInvId($invId);
     $vehicleImageDisplay = buildVehicleImageDisplay($images, $vehicle);
+
+    $clientFirstname = $_SESSION["clientData"]["clientFirstname"];
+    $clientLastname = $_SESSION["clientData"]["clientLastname"];
+    $clientId = $_SESSION["clientData"]["clientId"];
+
+    $clientScreenName = getScreenname($clientFirstname, $clientLastname);
+
+    $reviewDate = date('Y-m-d H:i:s');
+
+    $writeReview = buildReviewBox($clientScreenName, $clientId, $invId, $reviewDate);
+
+    $reviews = getReviewsByinvId($invId);
+
+    if($reviews == True) {
+      $clientReviews = buildClientReviews($reviews);
+    }
     
     include '../view/vehicle-detail.php';
 

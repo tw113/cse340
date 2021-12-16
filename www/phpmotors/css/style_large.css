@@ -10,6 +10,10 @@
     justify-content: space-around;
   }
 
+  #write-review form {
+    align-items: flex-start;
+  }
+
   .details-container {
     width: 100%;
     margin: 20px;

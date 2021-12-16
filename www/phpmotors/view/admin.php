@@ -46,6 +46,8 @@
       $clientLevel = (int)$_SESSION['clientData']['clientLevel'];
       if($clientLevel > 1) {
         echo "<a class='button' href='/phpmotors/vehicles/index.php'>Vehicle Management</a>";
+        echo '<h4>Your Reviews</h4>';
+        echo $reviewsDisplay;
       }
     ?>
   </div>

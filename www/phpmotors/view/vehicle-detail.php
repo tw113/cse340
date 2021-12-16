@@ -37,6 +37,23 @@
       <h6>In Stock: <?php echo $vehicle['invStock'] ?></h6>
     </div>
   </div>
+  <hr>
+  <div class="reviews-container">
+    <h2>Customer Reviews</h2>
+    <?php 
+      if($_SESSION['loggedin'] == False) { 
+        echo "You must login to write a review.";
+      } else {
+        echo $writeReview;
+      }
+
+      if($clientReviews == False) { 
+        echo "Be the first to write a review.";
+      } else {
+        echo $clientReviews;
+      }
+    ?>
+  </div>
   <footer id="footer">
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
   </footer>
